@@ -3,7 +3,7 @@ authors = ["Inflation <me@shimotsuki.ink>"]
 description = "Source of libjxl and logic to build it."
 edition = "2021"
 license = "BSD-3-Clause"
-name = "jpegxl-src"
+name = "msg-tool-jpegxl-src"
 readme = "README.md"
 repository = "https://github.com/inflation/jpegxl-rs"
 version = "0.11.2"
@@ -31,6 +31,10 @@ exclude = [
     "libjxl/debian",
     "libjxl/plugins",
 ]
+
+[lib]
+name = "jpegxl_src"
+path = "src/lib.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

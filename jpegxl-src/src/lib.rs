@@ -81,7 +81,7 @@ pub fn build() {
         assert!(!cfg!(tsan), "Thread sanitizer is not supported on Windows");
 
         // For CMake pre-checking
-        let mut exeflags = "MSVCRTD.lib".to_string();
+        let exeflags = "MSVCRTD.lib".to_string();
 
         config
             .define(

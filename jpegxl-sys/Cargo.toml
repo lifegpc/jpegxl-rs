@@ -6,13 +6,17 @@ edition = "2021"
 keywords = ["jpeg-xl", "jxl"]
 license = "GPL-3.0-or-later"
 links = "jxl"
-name = "jpegxl-sys"
+name = "msg-tool-jpegxl-sys"
 readme = "README.md"
 repository = "https://github.com/inflation/jpegxl-rs"
 version = "0.11.2+libjxl-0.11.1"
 rust-version.workspace = true
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "jpegxl_sys"
+path = "src/lib.rs"
 
 [lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(coverage_nightly)'] }
@@ -30,7 +34,7 @@ features = ["docs"]
 [build-dependencies]
 pkg-config = "0.3.32"
 
-[build-dependencies.jpegxl-src]
+[build-dependencies.msg-tool-jpegxl-src]
 version = "0.11.2"
 path = "../jpegxl-src"
 optional = true
@@ -41,5 +45,5 @@ pretty_assertions = "1.4.1"
 
 [features]
 default = []
-vendored = ["dep:jpegxl-src"]
+vendored = ["dep:msg-tool-jpegxl-src"]
 docs = []
