@@ -82,14 +82,8 @@ pub fn build() {
 
         // For CMake pre-checking
         let mut exeflags = "MSVCRTD.lib".to_string();
-        if cfg!(asan) {
-            exeflags.push_str(
-                " clang_rt.asan_dynamic-x86_64.lib clang_rt.asan_dynamic_runtime_thunk-x86_64.lib",
-            );
-        }
 
         config
-            .generator_toolset("ClangCL")
             .define(
                 "CMAKE_VS_GLOBALS",
                 "UseMultiToolTask=true;EnforceProcessCountAcrossBuilds=true",
